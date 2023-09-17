@@ -35,7 +35,7 @@ public class MyController {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         Response response = Response.builder()
                 .uid(request.getUid())
-                .opperationUid(request.getOpperationUid())
+                .opperationUid(request.getOperationUid())
                 .systemTime(simpleDateFormat.format(new Date()))
                 .code("success")
                 .errorCode("")
