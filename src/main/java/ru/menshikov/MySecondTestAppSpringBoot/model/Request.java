@@ -14,7 +14,6 @@ import javax.validation.constraints.Size;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Request {
 
     @Size(max = 32, message = "uid должен содержать не более 32 символов")
@@ -38,4 +37,20 @@ public class Request {
 
     private int productCode;
 
-    private int smsCode;}
+    private int smsCode;
+
+    @Override
+    public String toString() {
+        return "{" +
+                "uid='" + uid + '\'' +
+                ", operationUid='" + operationUid + '\'' +
+                        ", systemName='" + systemName + '\'' +
+                        ", systemTime='" + systemTime + '\'' +
+                        ", source='" + source + '\'' +
+                        ", communicationId=" + communicationId +
+                        ", templateId=" + templateId +
+                        ", productCode=" + productCode +
+                        ", smsCode=" + smsCode +
+                        '}';
+    }
+}
