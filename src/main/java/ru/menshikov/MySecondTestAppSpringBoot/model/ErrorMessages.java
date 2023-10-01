@@ -10,12 +10,10 @@ public enum ErrorMessages {
 
     private final String description;
     ErrorMessages(String description) {
-
         this.description = description;
     }
     @JsonValue
     public String getName() {
-
         return description;
     }
 }
