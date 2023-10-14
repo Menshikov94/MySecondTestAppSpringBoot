@@ -45,14 +45,14 @@ public class Request {
         return "{" +
                 "uid='" + uid + '\'' +
                 ", operationUid='" + operationUid + '\'' +
-                        ", systemName='" + systemName + '\'' +
-                        ", systemTime='" + systemTime + '\'' +
-                        ", source='" + source + '\'' +
-                        ", communicationId=" + communicationId +
-                        ", templateId=" + templateId +
-                        ", productCode=" + productCode +
-                        ", smsCode=" + smsCode +
-                        '}';
+                ", systemName='" + systemName + '\'' +
+                ", systemTime='" + systemTime + '\'' +
+                ", source='" + source + '\'' +
+                ", communicationId=" + communicationId +
+                ", templateId=" + templateId +
+                ", productCode=" + productCode +
+                ", smsCode=" + smsCode +
+                '}';
     }
     public enum Systems {
         ERP("Enterprise Resource Planning"),

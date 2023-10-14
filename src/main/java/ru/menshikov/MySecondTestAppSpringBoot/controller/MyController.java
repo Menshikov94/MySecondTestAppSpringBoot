@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.menshikov.MySecondTestAppSpringBoot.exception.UnsupportedCodeException;
 import ru.menshikov.MySecondTestAppSpringBoot.exception.ValidationFailedException;
 import ru.menshikov.MySecondTestAppSpringBoot.model.*;
+import ru.menshikov.MySecondTestAppSpringBoot.service.ModifyRequestService;
 import ru.menshikov.MySecondTestAppSpringBoot.service.ModifyResponseService;
 import ru.menshikov.MySecondTestAppSpringBoot.service.ValidationService;
 import ru.menshikov.MySecondTestAppSpringBoot.util.DateTimeUtil;
@@ -27,11 +28,13 @@ public class MyController {
     private final ValidationService validationService;
     private final ModifyResponseService modifyResponseService;
 
+    private final ModifyRequestService modifyRequestService;
     @Autowired
     public MyController(ValidationService validationService,
-                        @Qualifier("ModifySystemTimeResponseService") ModifyResponseService modifyResponseService) {
+                        @Qualifier("ModifySystemTimeResponseService") ModifyResponseService modifyResponseService, ModifyRequestService modifyRequestService) {
         this.validationService = validationService;
         this.modifyResponseService = modifyResponseService;
+        this.modifyRequestService = modifyRequestService;
     }
 
     @PostMapping(value = "/feedback")
@@ -78,6 +81,7 @@ public class MyController {
         }
         modifyResponseService.modify(response);
         log.info("Response: {}", response);
+        modifyRequestService.modify(request);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
