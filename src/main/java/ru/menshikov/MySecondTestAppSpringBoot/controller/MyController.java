@@ -39,7 +39,7 @@ public class MyController {
 
     @PostMapping(value = "/feedback")
     public ResponseEntity<Response> feedback(@Valid @RequestBody Request request,
-                                            BindingResult bindingResult) {
+                                             BindingResult bindingResult) {
         log.info("request: {}", request);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 

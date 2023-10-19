@@ -37,4 +37,3 @@ public class ModifySystemNameRequestService implements ModifyRequestService{
         logger.info("Сообщение обработано. Ответ отправлен.");
     }
 }
-

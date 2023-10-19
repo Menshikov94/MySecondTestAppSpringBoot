@@ -9,7 +9,7 @@ import java.util.UUID;
 @Service
 @Qualifier("ModifyOperationUidResponseService")
 public class ModifyOperationUidResponseService
-    implements ModifyResponseService{
+        implements ModifyResponseService{
     @Override
     public Response modify(Response response) {
 
